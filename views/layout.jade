@@ -1,0 +1,16 @@
+doctype html
+html
+	head
+		title= 'Email Assignment Scheduler'
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		h1.title= 'English Support: Mail Support Schedule'
+		block content
+	script(src='javascripts/classie.js')
+	script(src='javascripts/selectFx.js')
+	script.
+		(function() {
+			[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+				new SelectFx(el);
+			} );
+		})();
