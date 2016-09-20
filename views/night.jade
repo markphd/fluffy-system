@@ -1,0 +1,47 @@
+extends layout
+
+block content
+	h2.currentWeek Week #{ week }
+	
+	div.week
+		h1 Monday 
+			select.cs-select.cs-skin-border
+				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
+					each supporter in mondayRoster 
+						option= supporter.name
+
+		h1 Tuesday 
+			select.cs-select.cs-skin-border
+				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
+					each supporter in tuesdayRoster
+						option= supporter.name
+
+		h1 Wednesday 
+			select.cs-select.cs-skin-border
+				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
+					each supporter in wednesdayRoster
+						option= supporter.name
+
+		h1 Thursday 
+			select.cs-select.cs-skin-border
+				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
+					each supporter in thursdayRoster
+						option= supporter.name						
+
+		h1 Friday 
+			select.cs-select.cs-skin-border
+				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
+					each supporter in fridayRoster
+						option= supporter.name
+
+		h1 Saturday 
+			select.cs-select.cs-skin-border
+				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
+					each supporter in saturdayRoster
+						option= supporter.name
+
+		h1 Sunday 
+			select.cs-select.cs-skin-border
+				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
+					each supporter in sundayRoster
+						option= supporter.name
