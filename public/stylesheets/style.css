@@ -15,9 +15,40 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+header {
+	max-height: 100px;
 }
+
+a {
+  color: #74a345;
+}
+
+.logo img {
+	width: 50px;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+}
+
+.navigation-wrapper {
+	width: 100%;
+	height: 150px;
+	clear: both;
+}
+
+
+.navigation-menu a {
+	text-decoration: none;
+}
+
+li.nav-link {
+	float: right;
+	padding: 1%;
+	margin: 2% 5%;
+	list-style: none;
+	font-size: 1.5em;
+}
+
 
 .title { text-align: center; }
 
