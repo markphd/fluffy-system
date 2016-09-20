@@ -1,35 +1,56 @@
 extends layout
 
 block content
-	h1= 'English Support Email Assignment Scheduler'
-	h2.currentWeek #{ week }
+	h2.currentWeek Week: #{ week }
 
 	div.schedule
-		h1 Monday 
-			select.cs-select.cs-skin-border
-				option(value='0', selected='true' disabled) #{ title }
-
-		h1 Tuesday 
-			select.cs-select.cs-skin-border
-				option(value='0', selected='true' disabled) #{ title }
-
-		h1 Wednesday 
-			select.cs-select.cs-skin-border
-				option(value='0', selected='true' disabled) #{ title }
-
-		h1 Thursday 
-			select.cs-select.cs-skin-border
-				option(value='0', selected='true' disabled) #{ title }
-
-		h1 Friday 
-			select.cs-select.cs-skin-border
-				option(value='0', selected='true' disabled) #{ title }
-
-		h1 Saturday 
-			select.cs-select.cs-skin-border
-				option(value='0', selected='true' disabled) #{ title }
-
-		h1 Sunday 
-			select.cs-select.cs-skin-border
-				option(value='0', selected='true' disabled) #{ title }
-
+		section.days
+			div.shift
+				h1 Monday 
+				ul
+					li.morning Alpha
+					li.evening Leonardo
+					li.night Mark Anthony
+		section.days
+			div.shift
+				h1 Tuesday 
+				ul
+					li.morning Alpha
+					li.evening Melody
+					li.night Charles
+		section.days
+			div.shift
+				h1 Wednesday 
+				ul
+					li.morning Alpha
+					li.evening Jofel
+					li.night Charles
+		section.days
+			div.shift
+				h1 Thursday 
+				ul
+					li.morning Alpha
+					li.evening Leonardo
+					li.night Charles
+		section.days
+			div.shift
+				h1 Friday 
+				ul
+					li.morning Alpha
+					li.evening Leonardo
+					li.night Charles
+		section.days
+			div.shift
+				h1 Saturday 
+				ul
+					li.morning Alpha
+					li.evening Leonardo
+					li.night Charles
+		section.days
+			div.shift
+				h1 Sunday 
+				ul
+					li.morning Alpha
+					li.evening Leonardo
+					li.night Charles
+		

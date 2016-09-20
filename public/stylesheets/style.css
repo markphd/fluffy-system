@@ -10,7 +10,8 @@
 }
 
 body {
-  padding: 50px;
+  /*background-color: #74a345;*/
+  width: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -18,8 +19,73 @@ a {
   color: #00B7FF;
 }
 
+.title { text-align: center; }
+
 div.week h1 { text-align: right; margin-right: 2%;}
-h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; }
+h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; text-align: center;}
+
+.schedule {
+	padding-top: 5%;
+	width: 700px;
+	margin: 0 auto;
+}
+
+.days {
+	float: left;
+	clear: both;
+	overflow: hidden;
+	height: 100px;
+
+	width: 100%;
+	border-bottom: 3px solid #000;
+}
+
+.shift {
+	
+}
+
+.shift h1 {
+	display: block;
+	float: left;
+	width: 150px;
+	line-height: 65px;
+	text-align: right;
+}
+
+.shift ul {
+	float: left;
+	height: 100px;
+	margin: 0;
+	line-height: 100px;
+	text-align: center;
+}
+
+.shift li {
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0 10px;
+	width: 150px;
+	height: 100px;
+	background: #ccc;
+	font-size: 1.3em;
+	color: #fff;
+}
+
+li.morning {
+	background-color: #fef7bc;
+	color: #ad7317;
+}
+
+li.evening {
+    background-color: #f5ac28;
+    color: #ffeda3;
+}
+
+li.night {
+	background-color: #160a30;
+	color: #a17daf;;
+}
 
 .week {
 	margin: 0 auto;
@@ -33,11 +99,9 @@ h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; }
 	width: 50%;
 }
 
-li {
+div.cs-options > ul > li {
 	float: left;
 	list-style: none;
-/*	margin: 2%;
-	padding: 2%;*/
 	width: 100%;
 }
 
