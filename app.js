@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var admin = require('./routes/admin');
+
 
 // database connection
 var mongoose = require('mongoose');
@@ -85,15 +87,7 @@ request(scheduleDubai, {timeout: 6500}, function (error, reqs, body) {
       });
 
       createSupporter(supporterNumber);
-      
-      //  console.log(supporters);
 
-      // morningShift.each(function(doc) {
-      //   console.log(doc);
-      // })
-      var eveningShift = Supporter.find({ "schedule.Sunday": "E"}, { "name": true, "_id": false });
-      var nightShift = Supporter.find({ "schedule.Sunday": "N"}, { "name": true, "_id": false });
-      // console.log(morningShift);
     }); 
   }
 })
@@ -118,6 +112,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

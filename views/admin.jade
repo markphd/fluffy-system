@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h2.currentWeek Week: #{ week }
+
+	div.admin
+		h1: a(href="/morning") Morning
+		h1: a(href="/evening") Evening
+		h1: a(href="/night") Night

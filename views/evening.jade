@@ -45,3 +45,18 @@ block content
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in sundayRoster
 						option= supporter.name
+
+		button#a(onclick='toggleError()') Publish
+		script.
+			function toggleError(){
+				var elements = document.getElementsByClassName("cs-selected"),
+				    elementsLen = elements.length,
+				    i;
+
+				var roster = elements.filter(function(obj){
+					return obj.textContent;
+				})
+
+				console.log(roster);
+				console.log('Thanks for clicking me. It works!');
+			}
