@@ -15,6 +15,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/schedule');
 var db = mongoose.connection;
 var Supporter = require('./models/supporter.model.js');
+var Schedule = require('./models/supporter.model.js');
 
 // database empty collection
 var removeSupporters = function(db, callback) {

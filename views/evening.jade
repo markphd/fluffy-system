@@ -48,15 +48,99 @@ block content
 
 		button#a(onclick='toggleError()') Publish
 		script.
+			function getXmlDoc() {
+			  var xmlDoc;
+
+			  if (window.XMLHttpRequest) {
+			    // code for IE7+, Firefox, Chrome, Opera, Safari
+			    xmlDoc = new XMLHttpRequest();
+			  }
+			  else {
+			    // code for IE6, IE5
+			    xmlDoc = new ActiveXObject("Microsoft.XMLHTTP");
+			  }
+
+			  return xmlDoc;
+			}
+
+			function myGet(url, callback) {
+			  var xmlDoc = getXmlDoc();
+
+			  xmlDoc.open('GET', url, true);
+
+			  xmlDoc.onreadystatechange = function() {
+			    if (xmlDoc.readyState === 4 && xmlDoc.status === 200) {
+			      callback(xmlDoc);
+			    }
+			  }
+
+			  xmlDoc.send();
+			}
+
+			function myPost(url, data, callback) {
+			  var xmlDoc = getXmlDoc();
+
+			  xmlDoc.open('POST', url, true);
+			  xmlDoc.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			  xmlDoc.onreadystatechange = function() {
+			    if (xmlDoc.readyState === 4 && xmlDoc.status === 200) {
+			      callback(xmlDoc);
+			    }
+			  }
+
+			  xmlDoc.send(data);
+			}
+
+			function createSchedule(data){
+				console.log(data);
+			}
+
 			function toggleError(){
 				var elements = document.getElementsByClassName("cs-selected"),
 				    elementsLen = elements.length,
 				    i;
+				var supporters = [];
+				if(elementsLen == 7){
+					for(i in elements){
+						supporters.push(elements[i].textContent);
+					}
+					//- var roster = {year: '2016', weekOfYear: #{ week }, shift: 'Evening',
+					//- 	day: {
+					//- 		Monday: {
+					//- 			assigned: supporters[0]
+					//- 		},
+					//- 		Tuesday: {
+					//- 			assigned: supporters[1]
+					//- 		},
+					//- 		Wednesday: {
+					//- 			assigned: supporters[2]
+					//- 		},
+					//- 		Thursday: {
+					//- 			assigned: supporters[3]
+					//- 		},
+					//- 		Friday: {
+					//- 			assigned: supporters[4]
+					//- 		},
+					//- 		Saturday: {
+					//- 			assigned: supporters[5]
+					//- 		},
+					//- 		Sunday: {
+					//- 			assigned: supporters[6]
+					//- 		}
+					//- 	}
+					//- }
+					var roster = 'year=2016&week=36';
+					myPost('/admin', roster, function(){return console.log('Now a function.')});
+					console.log('This is roster: ', roster);
+				}
 
-				var roster = elements.filter(function(obj){
-					return obj.textContent;
-				})
+				else {
+
+				//- console.log('You must select 7 supporters')
+
+				}
 
 				console.log(roster);
-				console.log('Thanks for clicking me. It works!');
+				//- console.log('Thanks for clicking me. It works!');
 			}
