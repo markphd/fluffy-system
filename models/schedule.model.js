@@ -29,4 +29,4 @@ var scheduleSchema = mongoose.Schema({
       }
   });
 
-module.exports = mongoose.model('Schedule', supporterSchema);
+module.exports = mongoose.model('Schedule', scheduleSchema);

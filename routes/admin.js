@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var moment = require('moment');
 var week = moment().isoWeek();
-var Supporter = require('../models/supporter.model.js');
+var Schedule = require('../models/schedule.model.js');
 
 /* GET Admin page */
 router.get('/', function(req, res, next) {
@@ -10,14 +10,37 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res) {
-	console.log(req);
-	// console.log(res);
-	res.setHeader('Content-Type', 'text/plain');
-	res.write('you posted:\n');
-	res.end(JSON.stringify(req.body, null, 2));
-	// console.log('THIS:' + req.body.Friday );
-	// new Schedule(JSON.stringify(req.body, null, 2)).save();
-	return console.log(req.body)
+	console.log('This is req object', req.body);
+	new Schedule({
+		year: req.body.year,
+		weekOfYear: req.body.week,
+		shift: req.body.shift,
+		day: {
+			Monday: {
+				assigned: req.body.Monday
+			},
+			Tuesday: {
+				assigned: req.body.Tuesday
+			},
+			Wednesday: {
+				assigned: req.body.Wednesday
+			},
+			Thursday: {
+				assigned: req.body.Thursday
+			},
+			Friday: {
+				assigned: req.body.Friday
+			},
+			Saturday: {
+				assigned: req.body.Saturday
+			},
+			Sunday: {
+				assigned: req.body.Sunday
+			}
+		}
+	}).save();
+	console.log('New schedule successfully saved.');
+	res.redirect('/');
 })
 
 module.exports = router;

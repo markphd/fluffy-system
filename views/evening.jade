@@ -100,39 +100,21 @@ block content
 				var elements = document.getElementsByClassName("cs-selected"),
 				    elementsLen = elements.length,
 				    i;
+				var shift = 'evening';
 				var supporters = [];
 				if(elementsLen == 7){
 					for(i in elements){
 						supporters.push(elements[i].textContent);
 					}
-					//- var roster = {year: '2016', weekOfYear: #{ week }, shift: 'Evening',
-					//- 	day: {
-					//- 		Monday: {
-					//- 			assigned: supporters[0]
-					//- 		},
-					//- 		Tuesday: {
-					//- 			assigned: supporters[1]
-					//- 		},
-					//- 		Wednesday: {
-					//- 			assigned: supporters[2]
-					//- 		},
-					//- 		Thursday: {
-					//- 			assigned: supporters[3]
-					//- 		},
-					//- 		Friday: {
-					//- 			assigned: supporters[4]
-					//- 		},
-					//- 		Saturday: {
-					//- 			assigned: supporters[5]
-					//- 		},
-					//- 		Sunday: {
-					//- 			assigned: supporters[6]
-					//- 		}
-					//- 	}
-					//- }
-					var roster = 'year=2016&week=36';
-					myPost('/admin', roster, function(){return console.log('Now a function.')});
-					console.log('This is roster: ', roster);
+					var roster = 'year=' + #{ year } + '&week=' + #{ week } +
+											 '&shift=' + shift +
+											 '&Monday=' + supporters[0] + '&Tuesday=' + supporters[1] + 
+											 '&Wednesday=' + supporters[2] + '&Thursday=' + supporters[3] +
+											 '&Friday=' + supporters[4] + '&Saturday=' + supporters[5] +
+											 '&Sunday=' + supporters[6];
+					
+					myPost('/admin', roster, function(e){return console.log('Now a function.',e)});
+					console.log('This is shift: ', shift);
 				}
 
 				else {

@@ -1,6 +1,7 @@
 var Supporter = require('../models/supporter.model.js');
 var moment = require('moment');
 var week = moment().isoWeek();
+var year = moment().year();
 
 exports.createNightRoster = function(req, res) {
 	Supporter.find({}, { "_id": false }, function(err, supporters) {
@@ -48,15 +49,18 @@ exports.createNightRoster = function(req, res) {
     		}
     	})
 
-		res.render('night', { title: 'Night', 
-													mondayRoster: mondayRoster,
-													tuesdayRoster: tuesdayRoster,
-													wednesdayRoster: wednesdayRoster,
-													thursdayRoster: thursdayRoster,
-													fridayRoster: fridayRoster,
-													saturdayRoster: saturdayRoster,
-													sundayRoster: sundayRoster,
-													week: week } );
+		res.render('night', { 
+                                title: 'Night', 
+    							mondayRoster: mondayRoster,
+    							tuesdayRoster: tuesdayRoster,
+    							wednesdayRoster: wednesdayRoster,
+    							thursdayRoster: thursdayRoster,
+    							fridayRoster: fridayRoster,
+    							saturdayRoster: saturdayRoster,
+    							sundayRoster: sundayRoster,
+    							week: week,
+                                year: year 
+                            });
   	});
 
 }

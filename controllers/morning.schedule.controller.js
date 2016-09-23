@@ -1,6 +1,7 @@
 var Supporter = require('../models/supporter.model.js');
 var moment = require('moment');
 var week = moment().isoWeek();
+var year = moment().year();
 
 exports.createMorningRoster = function(req, res) {
 	Supporter.find({}, { "_id": false }, function(err, supporters) {
@@ -56,7 +57,8 @@ exports.createMorningRoster = function(req, res) {
 													fridayRoster: fridayRoster,
 													saturdayRoster: saturdayRoster,
 													sundayRoster: sundayRoster,
-													week: week } );
+													week: week,
+                                                    year: year } );
   	});
 
 }
