@@ -111,15 +111,15 @@ exports.updateEveningRoster = function(req, res) {
         })
 
         res.render('evening', { title: 'Evening', 
-                                                    mondayRoster: mondayRoster,
-                                                    tuesdayRoster: tuesdayRoster,
-                                                    wednesdayRoster: wednesdayRoster,
-                                                    thursdayRoster: thursdayRoster,
-                                                    fridayRoster: fridayRoster,
-                                                    saturdayRoster: saturdayRoster,
-                                                    sundayRoster: sundayRoster,
-                                                    week: week,
-                                                    year: year } );
+                                mondayRoster: mondayRoster,
+                                tuesdayRoster: tuesdayRoster,
+                                wednesdayRoster: wednesdayRoster,
+                                thursdayRoster: thursdayRoster,
+                                fridayRoster: fridayRoster,
+                                saturdayRoster: saturdayRoster,
+                                sundayRoster: sundayRoster,
+                                week: week,
+                                year: year } );
     });
 
 }

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Supporter = require('../models/supporter.model.js');
 var Schedule = require('../models/schedule.model.js');
+var homeCtrl = require('../controllers/home.controller.js');
 var morningScheduleCtrl = require('../controllers/morning.schedule.controller.js');
 var eveningScheduleCtrl = require('../controllers/evening.schedule.controller.js');
 var nightScheduleCtrl = require('../controllers/night.schedule.controller.js');
@@ -10,7 +11,8 @@ var week = moment().isoWeek();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { week: week });
+  // res.render('index', { week: week });
+  return homeCtrl.listEveningRoster(req, res);
 });
 
 // GET MORNING VIEW
