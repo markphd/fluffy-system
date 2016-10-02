@@ -1,16 +1,16 @@
 extends layout
 
 block content
-	h2.currentWeek Week: #{ week }
+	h2.currentWeek Week: 
 
 	div.schedule
 		section.days
 			div.shift
 				h1 Monday 
 				ul
-					li.morning Alpha
-					li.evening Leonardo
-					li.night Mark Anthony
+					li.morning #{ eveningMonday }
+					li.evening #{ eveningMonday39 }
+					li.night #{ eveningMonday }
 		section.days
 			div.shift
 				h1 Tuesday 
