@@ -8,7 +8,7 @@ exports.listEveningRoster = function(req, res) {
 	// var eveningMonday = [];
 	// var eveningMonday39;
 
-	Schedule.find({ $and: [ { weekOfYear: 38 }, { year: 2016 } ] }, function(err, supporters) {
+	Schedule.find({ weekOfYear: week }, function(err, supporters) {
 
 		// console.log(supporters);
 		// var opts38 = [{ path: 'day', match: { weekOfYear: 38} }];
@@ -21,9 +21,15 @@ exports.listEveningRoster = function(req, res) {
   //   	console.log(name + 'NAME');
 		// console.log(name.day.Sunday + 'NAME DAY');
 
-		var mondayAssigned = supporters.day.Sunday;
+		var mondayAssigned;
+		var tuesdayAssigned;
+		var wednesdayAssigned;
+		var thursdayAssigned;
+		var fridayAssigned;
+		var saturdayAssigned;
+		var sundayAssigned;
 
-   //  	var mondayAssigned = supporters.filter(function(name) {
+    	supporters.filter(function(name) {
     		
    //  		console.log(name + 'NAME');
 			// console.log(name.day.Sunday + 'NAME DAY');
@@ -34,9 +40,16 @@ exports.listEveningRoster = function(req, res) {
    //  		// 
    //  		return name.day.Sunday;
 
+   			mondayAssigned = name.day.Monday;
+   			tuesdayAssigned = name.day.Tuesday;
+   			wednesdayAssigned = name.day.Wednesday;
+   			thursdayAssigned = name.day.Thursday;
+   			fridayAssigned = name.day.Friday;
+   			saturdayAssigned = name.day.Saturday;
+   			sundayAssigned = name.day.Sunday;
    //  		// console.log('this => ', name[].day.Sunday.assigned);
    //  		// return name.shift;
-   //  	})
+    	})
 
     	// for(i in mondayAssigned){
     	// 	console.log(mondayAssigned[i] + '<==== KEYS');
@@ -53,7 +66,15 @@ exports.listEveningRoster = function(req, res) {
     // 		console.log(usr);
     // 	});
     	// console.log('This is week38: ' + week38);
-  		res.render('index', { eveningMonday: mondayAssigned._id });
+  		res.render('index', { 
+  					mondayAssigned: mondayAssigned.assigned, 
+  					tuesdayAssigned: tuesdayAssigned.assigned,
+  					wednesdayAssigned: wednesdayAssigned.assigned,
+  					thursdayAssigned: thursdayAssigned.assigned,
+  					fridayAssigned: fridayAssigned.assigned,
+  					saturdayAssigned: saturdayAssigned.assigned,
+  					sundayAssigned: sundayAssigned.assigned,
+  					week: week });
   	});
 
   	// eveningMonday.filter(function(name) {

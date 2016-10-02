@@ -1,55 +1,55 @@
 extends layout
 
 block content
-	h2.currentWeek Week: 
+	h2.currentWeek Week: #{ week }
 
 	div.schedule
 		section.days
 			div.shift
 				h1 Monday 
 				ul
-					li.morning #{ eveningMonday }
-					li.evening #{ eveningMonday39 }
-					li.night #{ eveningMonday }
+					li.morning 
+					li.evening #{ mondayAssigned }
+					li.night 
 		section.days
 			div.shift
 				h1 Tuesday 
 				ul
 					li.morning Alpha
-					li.evening Melody
+					li.evening #{ tuesdayAssigned }
 					li.night Charles
 		section.days
 			div.shift
 				h1 Wednesday 
 				ul
 					li.morning Alpha
-					li.evening Jofel
+					li.evening #{ wednesdayAssigned }
 					li.night Charles
 		section.days
 			div.shift
 				h1 Thursday 
 				ul
 					li.morning Alpha
-					li.evening Leonardo
+					li.evening #{ thursdayAssigned }
 					li.night Charles
 		section.days
 			div.shift
 				h1 Friday 
 				ul
 					li.morning Alpha
-					li.evening Leonardo
+					li.evening #{ fridayAssigned }
 					li.night Charles
 		section.days
 			div.shift
 				h1 Saturday 
 				ul
 					li.morning Alpha
-					li.evening Leonardo
+					li.evening #{ saturdayAssigned }
 					li.night Charles
 		section.days
 			div.shift
 				h1 Sunday 
 				ul
 					li.morning Alpha
-					li.evening Leonardo
+					li.evening #{ sundayAssigned }
 					li.night Charles
