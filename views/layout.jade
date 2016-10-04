@@ -4,56 +4,67 @@ html
 		title= 'Email Assignment Schedule'
 		link(rel='stylesheet', href='/stylesheets/style.css')
 	body
-		header.navigation(role='banner')
-			.navigation-wrapper
-				a.logo(href='/')
-					img(src='images/onecom.png', alt='Logo Image')
-				nav(role='navigation')
-					ul#js-navigation-menu.navigation-menu.show
-						li.nav-link
-							a(href='/admin') Sign In
+		div.progress#progress 
+		div.container
+			header.navigation(role='banner')
+				.navigation-wrapper
+					a.logo(href='/')
+						img(src='images/onecom.png', alt='Logo Image')
+					nav(role='navigation')
+						ul#js-navigation-menu.navigation-menu.show
+							li.nav-link
+								a(href='/admin') Sign In
 
-						//- li.nav-link
-						//- 	a(href='/morning') Morning
-						//- li.nav-link
-						//- 	a(href='/evening') Evening
-						//- li.nav-link
-						//- 	a(href='/night') Night
-				//- 		li#js-navigation-more.nav-link.more
-				//- 			a(href='javascript:void(0)') More
-				//- 			ul.submenu
-				//- 				li
-				//- 					a(href='javascript:void(0)') Submenu Item
-				//- 				li
-				//- 					a(href='javascript:void(0)') Another Item
-				//- 				li.more
-				//- 					a(href='javascript:void(0)') Item with submenu
-				//- 					ul.submenu
-				//- 						li
-				//- 							a(href='javascript:void(0)') Sub-submenu Item
-				//- 						li
-				//- 							a(href='javascript:void(0)') Another Item
-				//- 						li.more
-				//- 							a(href='javascript:void(0)') Another submenu
-				//- 							ul.submenu
-				//- 								li
-				//- 									a(href='javascript:void(0)') Sub-submenu
-				//- 								li
-				//- 									a(href='javascript:void(0)') An Item
-				//- .navigation-tools
-				//- 	.search-bar
-				//- 		form(role='search')
-				//- 			input(type='search', placeholder='Enter Search')
-				//- 			button(type='submit')
-				//- 				img(src='https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png', alt='Search Icon')
+							//- li.nav-link
+							//- 	a(href='/morning') Morning
+							//- li.nav-link
+							//- 	a(href='/evening') Evening
+							//- li.nav-link
+							//- 	a(href='/night') Night
+					//- 		li#js-navigation-more.nav-link.more
+					//- 			a(href='javascript:void(0)') More
+					//- 			ul.submenu
+					//- 				li
+					//- 					a(href='javascript:void(0)') Submenu Item
+					//- 				li
+					//- 					a(href='javascript:void(0)') Another Item
+					//- 				li.more
+					//- 					a(href='javascript:void(0)') Item with submenu
+					//- 					ul.submenu
+					//- 						li
+					//- 							a(href='javascript:void(0)') Sub-submenu Item
+					//- 						li
+					//- 							a(href='javascript:void(0)') Another Item
+					//- 						li.more
+					//- 							a(href='javascript:void(0)') Another submenu
+					//- 							ul.submenu
+					//- 								li
+					//- 									a(href='javascript:void(0)') Sub-submenu
+					//- 								li
+					//- 									a(href='javascript:void(0)') An Item
+					//- .navigation-tools
+					//- 	.search-bar
+					//- 		form(role='search')
+					//- 			input(type='search', placeholder='Enter Search')
+					//- 			button(type='submit')
+					//- 				img(src='https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png', alt='Search Icon')
 
-		p.title= 'English Support: Mail Assignment Schedule'
-		block content
-	script(src='javascripts/classie.js')
-	script(src='javascripts/selectFx.js')
-	script.
-		(function() {
-			[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
-				new SelectFx(el);
-			} );
-		})();
+			p.title= 'English Support: Mail Assignment Schedule'
+			block content
+		script(src='javascripts/classie.js')
+		script(src='javascripts/selectFx.js')
+		script.
+			(function() {
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+					new SelectFx(el);
+				} );
+				window.onload = function onLoad() {
+					var circle = new ProgressBar.Circle('#progress', {
+					color: '#FCB03C',
+					duration: 3000,
+					easing: 'easeInOut'
+					});
+
+					circle.animate(1);
+					};
+			})();

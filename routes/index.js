@@ -8,6 +8,18 @@ var eveningScheduleCtrl = require('../controllers/evening.schedule.controller.js
 var nightScheduleCtrl = require('../controllers/night.schedule.controller.js');
 var moment = require('moment');
 var week = moment().isoWeek();
+var ProgressBar = require('progressbar.js');
+
+
+
+// Assuming we have an empty <div id="container"></div> in
+// HTML
+// var bar = new ProgressBar.Line('#container', {easing: 'easeInOut'});
+// bar.animate(1);  // Value from 0.0 to 1.0
+
+
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

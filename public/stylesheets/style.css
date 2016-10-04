@@ -319,3 +319,11 @@ div.cs-skin-border {
 	background: #000;
 	color: #fff;
 }
+
+.progress {
+	height: 10px;
+}
+.progress > svg {
+	height: 100%;
+	display: block;
+}
