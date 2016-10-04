@@ -45,3 +45,101 @@ block content
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in sundayRoster
 						option= supporter.name
+		button#a(onclick='toggleError()') Publish
+		script.
+			function getXmlDoc() {
+			  var xmlDoc;
+
+			  if (window.XMLHttpRequest) {
+			    // code for IE7+, Firefox, Chrome, Opera, Safari
+			    xmlDoc = new XMLHttpRequest();
+			  }
+			  else {
+			    // code for IE6, IE5
+			    xmlDoc = new ActiveXObject("Microsoft.XMLHTTP");
+			  }
+
+			  return xmlDoc;
+			}
+
+			function myGet(url, callback) {
+			  var xmlDoc = getXmlDoc();
+
+			  xmlDoc.open('GET', url, true);
+
+			  xmlDoc.onreadystatechange = function() {
+			    if (xmlDoc.readyState === 4 && xmlDoc.status === 200) {
+			      callback(xmlDoc);
+			    }
+			  }
+
+			  xmlDoc.send();
+			}
+
+			function myPost(url, data, callback) {
+			  var xmlDoc = getXmlDoc();
+
+			  xmlDoc.open('POST', url, true);
+			  xmlDoc.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			  xmlDoc.onreadystatechange = function() {
+			    if (xmlDoc.readyState === 4 && xmlDoc.status === 200) {
+			      callback(xmlDoc);
+			    }
+			  }
+
+			  xmlDoc.send(data);
+			}
+
+			function createSchedule(data){
+				console.log(data);
+			}
+
+			function toggleError(){
+				var elements = document.getElementsByClassName("cs-selected"),
+				    elementsLen = elements.length,
+				    i;
+				var shift = 'evening';
+				var supporters = [];
+				if(elementsLen == 7){
+
+					var bar = new ProgressBar.Line('#progress', {
+					  strokeWidth: 4,
+					  easing: 'easeInOut',
+					  duration: 1400,
+					  color: '#74a345',
+					  trailColor: '#fff',
+					  trailWidth: 1,
+					  svgStyle: {width: '100%', height: '100%'}
+					});
+
+					for(i in elements){
+						supporters.push(elements[i].textContent);
+					}
+					var roster = 'year=' + #{ year } + '&week=' + #{ week } +
+											 '&shift=' + shift +
+											 '&Monday=' + supporters[0] + '&Tuesday=' + supporters[1] + 
+											 '&Wednesday=' + supporters[2] + '&Thursday=' + supporters[3] +
+											 '&Friday=' + supporters[4] + '&Saturday=' + supporters[5] +
+											 '&Sunday=' + supporters[6];
+
+					myPost('/' + shift, roster, function(){
+						bar.animate(1.0, { duration: 800 }, function(){
+							window.location.replace('http://localhost:3000/');	
+						});
+					} );
+					console.log('This is shift: ', shift);
+					  // Number from 0.0 to 1.0
+
+				}
+
+				else {
+
+				//- console.log('You must select 7 supporters')
+
+				}
+				
+				console.log(roster);
+				//- bar.destroy();
+				//- console.log('Thanks for clicking me. It works!');
+			}

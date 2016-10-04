@@ -9,7 +9,6 @@ exports.listEveningRoster = function(req, res) {
 
     	if(err) return err;
 
-    	
 		var mondayAssigned = 'N/A';
 		var tuesdayAssigned = 'N/A';
 		var wednesdayAssigned = 'N/A';
@@ -19,9 +18,6 @@ exports.listEveningRoster = function(req, res) {
 		var sundayAssigned = 'N/A';
 
     	supporters.filter(function(name) {
-
-    		console.log('SHIFT: ', supporters.shift)
-    		
    			mondayAssigned = name.day.Monday.assigned;
    			tuesdayAssigned = name.day.Tuesday.assigned;
    			wednesdayAssigned = name.day.Wednesday.assigned;
@@ -29,7 +25,6 @@ exports.listEveningRoster = function(req, res) {
    			fridayAssigned = name.day.Friday.assigned;
    			saturdayAssigned = name.day.Saturday.assigned;
    			sundayAssigned = name.day.Sunday.assigned;
-
     	})
 
   		res.render('index', { 
