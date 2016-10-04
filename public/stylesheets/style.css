@@ -11,6 +11,8 @@
 
 body {
   /*background-color: #74a345;*/
+  margin: 0;
+  padding: 0;
   width: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -321,9 +323,15 @@ div.cs-skin-border {
 }
 
 .progress {
+	position: fixed;
 	height: 10px;
+	width: 100%;
+	top: 0;
 }
 .progress > svg {
+	position: absolute;
+	top: 0;
 	height: 100%;
+	width: 100%;
 	display: block;
 }

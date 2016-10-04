@@ -2,7 +2,7 @@ extends layout
 
 block content
 	h2.currentWeek Week #{ week }
-	
+	div#progress.progress
 	div.week
 		h1 Monday 
 			select.cs-select.cs-skin-border
@@ -47,6 +47,7 @@ block content
 						option= supporter.name
 
 		button#a(onclick='toggleError()') Publish
+		script(src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js")
 		script.
 			function getXmlDoc() {
 			  var xmlDoc;
@@ -103,6 +104,17 @@ block content
 				var shift = 'evening';
 				var supporters = [];
 				if(elementsLen == 7){
+
+					var bar = new ProgressBar.Line(progress, {
+					  strokeWidth: 4,
+					  easing: 'easeInOut',
+					  duration: 1400,
+					  color: '#74a345',
+					  trailColor: '#fff',
+					  trailWidth: 1,
+					  svgStyle: {width: '100%', height: '100%'}
+					});
+
 					for(i in elements){
 						supporters.push(elements[i].textContent);
 					}
@@ -113,8 +125,15 @@ block content
 											 '&Friday=' + supporters[4] + '&Saturday=' + supporters[5] +
 											 '&Sunday=' + supporters[6];
 					
-					myPost('/' + shift, roster, function(e){return console.log('Now a function.',e)});
+					var destroy = bar.destroy();
+
+					myPost('/' + shift, roster, function(){
+						bar.animate(1.0, { duration: 800 }, destroy);
+					
+					} );
 					console.log('This is shift: ', shift);
+					  // Number from 0.0 to 1.0
+
 				}
 
 				else {
@@ -122,7 +141,8 @@ block content
 				//- console.log('You must select 7 supporters')
 
 				}
-
+				
 				console.log(roster);
+				bar.destroy();
 				//- console.log('Thanks for clicking me. It works!');
 			}
