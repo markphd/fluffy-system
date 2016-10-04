@@ -335,3 +335,28 @@ div.cs-skin-border {
 	width: 100%;
 	display: block;
 }
+
+button {
+	font-family: inherit;
+	text-transform: uppercase;
+	margin-right: 10px;
+	letter-spacing: 1px;
+	font-size: 1.5em;
+	padding: 2%;
+	background-color: #fff;
+	color: #74a345;
+	transition: all 0.4s;
+	border: 3px solid #74a345;
+	display: block;
+	float: right;
+}
+
+button:hover {
+	background-color: #74a345;
+	color: #fff;
+}
+
+#a {
+	margin-top: 50px;
+}
+
