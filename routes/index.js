@@ -42,6 +42,52 @@ router.get('/night', function(req, res, next) {
   return nightScheduleCtrl.createNightRoster(req, res);
 });
 
+// POST MORNING VIEW
+router.post('/morning', function(req, res, next) {
+  console.log('This is morning POST request');
+  Schedule.find({ $and: [ { weekOfYear: week }, { shift: "morning" } ] }).count(function (err, doc) {
+    var counter = doc;
+    console.log('This is count: ' + counter );
+    if (doc === 0) {
+      new Schedule({
+        year: req.body.year,
+        weekOfYear: req.body.week,
+        shift: req.body.shift,
+        day: {
+          Monday: {
+            assigned: req.body.Monday
+          },
+          Tuesday: {
+            assigned: req.body.Tuesday
+          },
+          Wednesday: {
+            assigned: req.body.Wednesday
+          },
+          Thursday: {
+            assigned: req.body.Thursday
+          },
+          Friday: {
+            assigned: req.body.Friday
+          },
+          Saturday: {
+            assigned: req.body.Saturday
+          },
+          Sunday: {
+            assigned: req.body.Sunday
+          }
+        }
+      }).save();
+      console.log('New schedule successfully saved.');
+      return res.redirect('/');
+    } else {
+      console.log('Already created');
+      return res.redirect('/');
+    }
+  });
+  
+  // console.log('This is count: ' + counter );
+});
+
 // POST EVENING VIEW
 router.post('/evening', function(req, res, next) {
   console.log('This is evening POST request');
@@ -90,7 +136,7 @@ router.post('/evening', function(req, res, next) {
 
 // POST NIGHT VIEW
 router.post('/night', function(req, res, next) {
-  console.log('This is evening POST request');
+  console.log('This is night POST request');
   Schedule.find({ $and: [ { weekOfYear: week }, { shift: "night" } ] }).count(function (err, doc) {
     var counter = doc;
     console.log('This is count: ' + counter );
