@@ -78,10 +78,10 @@ router.post('/evening', function(req, res, next) {
   			}
   		}).save();
   		console.log('New schedule successfully saved.');
-  		res.redirect('/');
+  		return res.redirect('/');
   	} else {
   		console.log('Already created');
-  		res.redirect('/admin');
+  		return res.redirect('/');
   	}
   });
   

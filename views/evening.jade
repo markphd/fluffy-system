@@ -47,7 +47,6 @@ block content
 						option= supporter.name
 
 		button#a(onclick='toggleError()') Publish
-		script(src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js")
 		script.
 			function getXmlDoc() {
 			  var xmlDoc;
@@ -105,7 +104,7 @@ block content
 				var supporters = [];
 				if(elementsLen == 7){
 
-					var bar = new ProgressBar.Line(progress, {
+					var bar = new ProgressBar.Line('#progress', {
 					  strokeWidth: 4,
 					  easing: 'easeInOut',
 					  duration: 1400,
@@ -125,10 +124,10 @@ block content
 											 '&Friday=' + supporters[4] + '&Saturday=' + supporters[5] +
 											 '&Sunday=' + supporters[6];
 					
-					var destroy = bar.destroy();
+					//- var destroy = bar.destroy();
 
 					myPost('/' + shift, roster, function(){
-						bar.animate(1.0, { duration: 800 }, destroy);
+						bar.animate(1.0, { duration: 800 });
 					
 					} );
 					console.log('This is shift: ', shift);
@@ -143,6 +142,6 @@ block content
 				}
 				
 				console.log(roster);
-				bar.destroy();
+				//- bar.destroy();
 				//- console.log('Thanks for clicking me. It works!');
 			}

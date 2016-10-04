@@ -50,21 +50,14 @@ html
 					//- 				img(src='https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png', alt='Search Icon')
 
 			p.title= 'English Support: Mail Assignment Schedule'
+
 			block content
 		script(src='javascripts/classie.js')
 		script(src='javascripts/selectFx.js')
+		script(src='javascripts/progressbar.js')
 		script.
 			(function() {
 				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
 					new SelectFx(el);
-				} );
-				window.onload = function onLoad() {
-					var circle = new ProgressBar.Circle('#progress', {
-					color: '#FCB03C',
-					duration: 3000,
-					easing: 'easeInOut'
-					});
-
-					circle.animate(1);
-					};
+				} );	
 			})();
