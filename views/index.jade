@@ -1,6 +1,7 @@
 extends layout
 
 block content
+
 	h2.currentWeek Week: #{ week }
 
 	div.schedule
@@ -8,48 +9,48 @@ block content
 			div.shift
 				h1 Monday 
 				ul
-					li.morning #{ morningRoster.day.Monday.assigned || "N/A" }
-					li.evening #{ eveningRoster.day.Monday.assigned || "N/A" }
-					li.night   #{ nightRoster.day.Monday.assigned || "N/A" }
+					li.morning #{ morningRoster.day.Monday.assigned }
+					li.evening #{ eveningRoster.day.Monday.assigned }
+					li.night   #{ nightRoster.day.Monday.assigned }
 		section.days
 			div.shift
 				h1 Tuesday 
 				ul
-					li.morning 	#{ morningRoster.day.Tuesday.assigned || "N/A" }
-					li.evening 	#{ eveningRoster.day.Tuesday.assigned || "N/A" }
-					li.night 	#{ nightRoster.day.Tuesday.assigned || "N/A" }
+					li.morning 	#{ morningRoster.day.Tuesday.assigned }
+					li.evening 	#{ eveningRoster.day.Tuesday.assigned }
+					li.night 	#{ nightRoster.day.Tuesday.assigned }
 		section.days
 			div.shift
 				h1 Wednesday 
 				ul
-					li.morning 	#{ morningRoster.day.Wednesday.assigned || "N/A" }
-					li.evening 	#{ eveningRoster.day.Wednesday.assigned || "N/A" }
-					li.night 	#{ nightRoster.day.Wednesday.assigned || "N/A" }
+					li.morning 	#{ morningRoster.day.Wednesday.assigned }
+					li.evening 	#{ eveningRoster.day.Wednesday.assigned }
+					li.night 	#{ nightRoster.day.Wednesday.assigned }
 		section.days
 			div.shift
 				h1 Thursday 
 				ul
-					li.morning 	#{ morningRoster.day.Thursday.assigned || "N/A" }
-					li.evening 	#{ eveningRoster.day.Thursday.assigned || "N/A" }
-					li.night 	#{ nightRoster.day.Thursday.assigned || "N/A" }
+					li.morning 	#{ morningRoster.day.Thursday.assigned }
+					li.evening 	#{ eveningRoster.day.Thursday.assigned }
+					li.night 	#{ nightRoster.day.Thursday.assigned }
 		section.days
 			div.shift
 				h1 Friday 
 				ul
-					li.morning 	#{ morningRoster.day.Friday.assigned || "N/A" }
-					li.evening 	#{ eveningRoster.day.Friday.assigned || "N/A" }
-					li.night 	#{ nightRoster.day.Friday.assigned || "N/A" }
+					li.morning 	#{ morningRoster.day.Friday.assigned }
+					li.evening 	#{ eveningRoster.day.Friday.assigned }
+					li.night 	#{ nightRoster.day.Friday.assigned }
 		section.days
 			div.shift
 				h1 Saturday 
 				ul
-					li.morning 	#{ morningRoster.day.Saturday.assigned || "N/A" }
-					li.evening 	#{ eveningRoster.day.Saturday.assigned || "N/A" }
-					li.night 	#{ nightRoster.day.Saturday.assigned || "N/A" }
+					li.morning 	#{ morningRoster.day.Saturday.assigned }
+					li.evening 	#{ eveningRoster.day.Saturday.assigned }
+					li.night 	#{ nightRoster.day.Saturday.assigned }
 		section.days
 			div.shift
 				h1 Sunday 
 				ul
-					li.morning 	#{ morningRoster.day.Sunday.assigned || "N/A" }
-					li.evening 	#{ eveningRoster.day.Sunday.assigned || "N/A" }
-					li.night 	#{ nightRoster.day.Sunday.assigned || "N/A" }
+					li.morning 	#{ morningRoster.day.Sunday.assigned }
+					li.evening 	#{ eveningRoster.day.Sunday.assigned }
+					li.night 	#{ nightRoster.day.Sunday.assigned }
