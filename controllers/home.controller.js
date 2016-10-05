@@ -7,7 +7,7 @@ exports.listEveningRoster = function(req, res) {
 
 	Schedule.find({ weekOfYear: week }, function(err, supporters) {
 
-    	if(err) return err;
+    if(err) return err;
 
 		// var mondayAssigned = 'N/A';
 		// var tuesdayAssigned = 'N/A';
@@ -17,9 +17,80 @@ exports.listEveningRoster = function(req, res) {
 		// var saturdayAssigned = 'N/A';
 		// var sundayAssigned = 'N/A';
 
-		var morningRoster,
-			eveningRoster,
-			nightRoster;
+		var morningRoster = {
+      "day" : {
+          "Sunday" : {
+            "assigned" : "N/A"
+          },
+          "Saturday" : {
+            "assigned" : "N/A"
+          },
+          "Friday" : {
+            "assigned" : "N/A"
+          },
+          "Thursday" : {
+            "assigned" : "N/A"
+          },
+          "Wednesday" : {
+            "assigned" : "N/A"
+          },
+          "Tuesday" : {
+            "assigned" : "N/A"
+          },
+          "Monday" : {
+            "assigned" : "N/A"
+          }
+    }};
+
+    var eveningRoster = {
+      "day" : {
+          "Sunday" : {
+            "assigned" : "N/A"
+          },
+          "Saturday" : {
+            "assigned" : "N/A"
+          },
+          "Friday" : {
+            "assigned" : "N/A"
+          },
+          "Thursday" : {
+            "assigned" : "N/A"
+          },
+          "Wednesday" : {
+            "assigned" : "N/A"
+          },
+          "Tuesday" : {
+            "assigned" : "N/A"
+          },
+          "Monday" : {
+            "assigned" : "N/A"
+          }
+    }};
+
+    var nightRoster = {
+      "day" : {
+          "Sunday" : {
+            "assigned" : "N/A"
+          },
+          "Saturday" : {
+            "assigned" : "N/A"
+          },
+          "Friday" : {
+            "assigned" : "N/A"
+          },
+          "Thursday" : {
+            "assigned" : "N/A"
+          },
+          "Wednesday" : {
+            "assigned" : "N/A"
+          },
+          "Tuesday" : {
+            "assigned" : "N/A"
+          },
+          "Monday" : {
+            "assigned" : "N/A"
+          }
+    }};
 
     	supporters.filter(function(name) {
 
@@ -40,9 +111,9 @@ exports.listEveningRoster = function(req, res) {
    			// sundayAssigned = name.day.Sunday.assigned;
     	})
 
-    	console.log(morningRoster.day.Sunday.assigned)
-    	console.log(eveningRoster.day.Sunday.assigned)
-    	console.log(nightRoster.day.Sunday.assigned)
+    	// console.log(morningRoster.day.Sunday.assigned)
+    	// console.log(eveningRoster.day.Sunday.assigned)
+    	// console.log(nightRoster.day.Sunday.assigned)
 
   		res.render('index', { 
   					// mondayAssigned: mondayAssigned, 
@@ -52,6 +123,9 @@ exports.listEveningRoster = function(req, res) {
   					// fridayAssigned: fridayAssigned,
   					// saturdayAssigned: saturdayAssigned,
   					// sundayAssigned: sundayAssigned,
+            morningRoster: morningRoster,
+            eveningRoster: eveningRoster,
+            nightRoster: nightRoster,
   					week: week });
   	});
 
