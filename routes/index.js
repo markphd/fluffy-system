@@ -9,6 +9,9 @@ var nightScheduleCtrl = require('../controllers/night.schedule.controller.js');
 var moment = require('moment');
 var week = moment().isoWeek();
 var ProgressBar = require('progressbar.js');
+var os = require('os');
+
+console.log("This is hostname: ", os.hostname());
 
 
 
