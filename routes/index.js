@@ -10,8 +10,9 @@ var moment = require('moment');
 var week = moment().isoWeek();
 var ProgressBar = require('progressbar.js');
 var os = require('os');
+var host = os.networkInterfaces().en0[1].address;
 
-console.log("This is hostname: ", os.hostname());
+console.log("This is hostname: ", os.networkInterfaces().en0[1].address);
 
 
 
