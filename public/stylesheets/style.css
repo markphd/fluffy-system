@@ -61,7 +61,7 @@ div.admin h1 { text-align: center; margin-top: 2%;}
 h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; text-align: center;}
 
 .schedule {
-	padding-top: 5%;
+	padding-top: 1%;
 	width: 700px;
 	margin: 0 auto;
 }
@@ -71,9 +71,10 @@ h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; text-alig
 	clear: both;
 	overflow: hidden;
 	height: 100px;
-
 	width: 100%;
-	border-bottom: 3px solid #000;
+	border-bottom: 1px solid #1d1d1d;
+	background-color: #000;
+	color: #fff;
 }
 
 .shift {
@@ -110,17 +111,17 @@ h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; text-alig
 
 li.morning {
 	background-color: #fef7bc;
-	color: #ad7317;
+	color: #efc632;
 }
 
 li.evening {
     background-color: #f5ac28;
-    color: #ffeda3;
+    color: #d4671a;
 }
 
 li.night {
 	background-color: #160a30;
-	color: #a17daf;;
+	color: #7b3198;
 }
 
 .week {
@@ -360,3 +361,41 @@ button:hover {
 	margin-top: 50px;
 }
 
+.list-wrapper {
+	margin-left: 150px;
+}
+
+ul.list-wrapper li {
+	float: left;
+	padding: 3% 0;
+	list-style: none;
+	width: 170px;
+	text-align: center;
+}
+
+ul.list-wrapper li:first-child {
+	background-image: url(../images/sunrise-thin.png);
+	background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    height: 60px;
+    background-color: #efc632;
+}
+
+ul.list-wrapper li:nth-child(2) {
+	background-image: url(../images/sun.png);
+    background-repeat: no-repeat;
+    background-size: 5em;
+    background-position: center;
+    height: 60px;
+    background-color: #d4671a;
+}
+
+ul.list-wrapper li:last-child {
+	background-image: url(../images/moon-thin.png);
+    background-repeat: no-repeat;
+    background-size: 4.3em;
+    background-position: center;
+    height: 60px;
+    background-color: #7b3198;
+}

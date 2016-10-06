@@ -2,54 +2,63 @@ extends layout
 
 block content
 
-	h2.currentWeek Week: #{ week }
+	h2.currentWeek Week #{ week }
 
 	div.schedule
+		ul.list-wrapper
+			
+			li 
+				//- p Morning
+			li 
+				//- p Evening
+			li 
+				//- p Night
+
 		section.days
 			div.shift
-				h1 Monday 
+				h1 03 MON 
 				ul
 					li.morning #{ morningRoster.day.Monday.assigned }
 					li.evening #{ eveningRoster.day.Monday.assigned }
 					li.night   #{ nightRoster.day.Monday.assigned }
 		section.days
 			div.shift
-				h1 Tuesday 
+				h1 04 TUE 
 				ul
 					li.morning 	#{ morningRoster.day.Tuesday.assigned }
 					li.evening 	#{ eveningRoster.day.Tuesday.assigned }
 					li.night 	#{ nightRoster.day.Tuesday.assigned }
 		section.days
 			div.shift
-				h1 Wednesday 
+				h1 05 WED 
 				ul
 					li.morning 	#{ morningRoster.day.Wednesday.assigned }
 					li.evening 	#{ eveningRoster.day.Wednesday.assigned }
 					li.night 	#{ nightRoster.day.Wednesday.assigned }
 		section.days
 			div.shift
-				h1 Thursday 
+				h1 06 THU 
 				ul
 					li.morning 	#{ morningRoster.day.Thursday.assigned }
 					li.evening 	#{ eveningRoster.day.Thursday.assigned }
 					li.night 	#{ nightRoster.day.Thursday.assigned }
 		section.days
 			div.shift
-				h1 Friday 
+				h1 <span>07</span> FRI 
 				ul
 					li.morning 	#{ morningRoster.day.Friday.assigned }
 					li.evening 	#{ eveningRoster.day.Friday.assigned }
 					li.night 	#{ nightRoster.day.Friday.assigned }
 		section.days
 			div.shift
-				h1 Saturday 
+				h1 08 SAT 
 				ul
 					li.morning 	#{ morningRoster.day.Saturday.assigned }
 					li.evening 	#{ eveningRoster.day.Saturday.assigned }
 					li.night 	#{ nightRoster.day.Saturday.assigned }
 		section.days
 			div.shift
-				h1 Sunday 
+				h1 09 SUN 
 				ul
 					li.morning 	#{ morningRoster.day.Sunday.assigned }
 					li.evening 	#{ eveningRoster.day.Sunday.assigned }
