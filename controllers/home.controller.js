@@ -2,6 +2,15 @@ var Schedule = require('../models/schedule.model.js');
 var moment = require('moment');
 var week = moment().isoWeek();
 var year = moment().year();
+var monDate = moment().year(year).day("Monday").isoWeek(week).format("D");
+var tueDate = moment().year(year).day("Tuesday").isoWeek(week).format("D");
+var wedDate = moment().year(year).day("Wednesday").isoWeek(week).format("D");
+var thuDate = moment().year(year).day("Thursday").isoWeek(week).format("D");
+var friDate = moment().year(year).day("Friday").isoWeek(week).format("D");
+var satDate = moment().year(year).day("Saturday").isoWeek(week).format("D");
+var sunDate = moment().year(year).day("Sunday").isoWeek(week).format("D");
+
+console.log(monDate, "monDate");
 
 exports.listEveningRoster = function(req, res) {
 
@@ -126,7 +135,14 @@ exports.listEveningRoster = function(req, res) {
             morningRoster: morningRoster,
             eveningRoster: eveningRoster,
             nightRoster: nightRoster,
-  					week: week });
+  					week: week,
+            monDate: monDate,
+            tueDate: tueDate,
+            wedDate: wedDate,
+            thuDate: thuDate,
+            friDate: friDate,
+            satDate: satDate,
+            sunDate: sunDate });
   	});
 
 }

@@ -36,9 +36,9 @@ var week = moment().isoWeek();
 
 // User Credentials
 var user = 'mpd';
-var bytes  = CryptoJS.AES.decrypt('U2FsdGVkX188HHWmM0mEBlrlv12DpRiURMke0mzV+90=', '7013254dca77e2c913d18cf5b70e7bba');
+// var bytes  = CryptoJS.AES.decrypt('U2FsdGVkX188HHWmM0mEBlrlv12DpRiURMke0mzV+90=', '7013254dca77e2c913d18cf5b70e7bba');
+var bytes  = CryptoJS.AES.decrypt('U2FsdGVkX19BRNKccFbOXckHxSKkQQV4qXBjVoQjSDk=', '7013254dca77e2c913d18cf5b70e7bba');
 var password = bytes.toString(CryptoJS.enc.Utf8);
-
 
 // Schedule Source
 var scheduleDubai = 'https://' + user + ':' + password + '@supportkb.one.com/teams/english/schedule/';

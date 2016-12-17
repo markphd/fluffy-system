@@ -4,43 +4,43 @@ block content
 	h2.currentWeek Week #{ week }
 	div#progress.progress
 	div.week
-		h1 Monday 
+		h1 <span>#{ monDate }</span> MON 
 			select.cs-select.cs-skin-border
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in mondayRoster 
 						option= supporter.name
 
-		h1 Tuesday 
+		h1 <span>#{ tueDate }</span> TUE 
 			select.cs-select.cs-skin-border
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in tuesdayRoster
 						option= supporter.name
 
-		h1 Wednesday 
+		h1 <span>#{ wedDate }</span> WED 
 			select.cs-select.cs-skin-border
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in wednesdayRoster
 						option= supporter.name
 
-		h1 Thursday 
+		h1 <span>#{ thuDate }</span> THU 
 			select.cs-select.cs-skin-border
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in thursdayRoster
 						option= supporter.name						
 
-		h1 Friday 
+		h1 <span>#{ friDate }</span> FRI 
 			select.cs-select.cs-skin-border
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in fridayRoster
 						option= supporter.name
 
-		h1 Saturday 
+		h1 <span>#{ satDate }</span> SAT 
 			select.cs-select.cs-skin-border
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in saturdayRoster
 						option= supporter.name
 
-		h1 Sunday 
+		h1 <span>#{ sunDate }</span> SUN 
 			select.cs-select.cs-skin-border
 				option(value='0', selected='true' disabled) [ DXB - Eng ] #{ title }
 					each supporter in sundayRoster

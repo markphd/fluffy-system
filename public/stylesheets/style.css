@@ -72,9 +72,11 @@ h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; text-alig
 	overflow: hidden;
 	height: 100px;
 	width: 100%;
-	border-bottom: 1px solid #1d1d1d;
-	background-color: #000;
-	color: #fff;
+	/*border-bottom: 1px solid #1d1d1d;
+	background-color: #000;*/
+	/*color: #fff;*/
+	color: #bf6c6c;
+	background-color: #252525;
 }
 
 .shift {
@@ -83,10 +85,22 @@ h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; text-alig
 
 .shift h1 {
 	display: block;
+	position: relative;
 	float: left;
-	width: 150px;
-	line-height: 65px;
-	text-align: right;
+	width: 130px;
+	margin-left: 20px;
+	/*line-height: 65px;*/
+	line-height: 100px;
+	text-align: center;
+}
+
+.shift h1 > span {
+	font-size: -webkit-xxx-large;
+    position: absolute;
+    /* margin: 0.5em 0; */
+    margin-top: -35px;
+    color: cornsilk;
+    left: 40px;
 }
 
 .shift ul {
@@ -102,11 +116,13 @@ h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; text-alig
 	list-style: none;
 	margin: 0;
 	padding: 0 10px;
-	width: 150px;
+	width: 170px;
 	height: 100px;
 	background: #ccc;
 	font-size: 1.3em;
 	color: #fff;
+	box-sizing: border-box;
+	border-bottom: 1px solid #232323;
 }
 
 li.morning {
