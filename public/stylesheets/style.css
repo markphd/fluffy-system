@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Varela Round", Helvetica, Arial, sans-serif;
 }
 
 header {
@@ -52,13 +52,23 @@ li.nav-link {
 }
 
 
-.title { text-align: center; }
+.title { text-align: center; font-size: 3em;}
 
 div.week h1 { text-align: right; margin-right: 2%;}
 div.admin h1 { text-align: center; margin-top: 2%;}
 
 
-h2.currentWeek { font-size: 3em; font-weight: 200; line-height: 0.5em; text-align: center;}
+h2.currentWeek { 
+    position: relative;
+    font-size: 2em;
+    font-weight: 200;
+    line-height: 0.5em;
+    /* text-align: center; */
+    top: 70px;
+    left: 30px;
+    text-transform: uppercase;
+    color: #a7a7a7;
+}
 
 .schedule {
 	padding-top: 1%;
