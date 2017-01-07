@@ -110,7 +110,8 @@ h2.currentWeek {
     /* margin: 0.5em 0; */
     margin-top: -35px;
     color: cornsilk;
-    left: 40px;
+	left: 0;
+    right: 0;
 }
 
 .shift ul {
