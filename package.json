@@ -13,6 +13,7 @@
     "express": "~4.13.4",
     "express-flash": "0.0.2",
     "express-session": "^1.14.1",
+    "ip": "^1.1.4",
     "jade": "~1.11.0",
     "moment": "^2.14.1",
     "mongoose": "^4.6.0",

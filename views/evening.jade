@@ -102,6 +102,7 @@ block content
 				    i;
 				var shift = 'evening';
 				var supporters = [];
+
 				if(elementsLen == 7){
 
 					var bar = new ProgressBar.Line('#progress', {
@@ -126,7 +127,7 @@ block content
 
 					myPost('/' + shift, roster, function(){
 						bar.animate(1.0, { duration: 800 }, function(){
-							window.location.replace('http://192.168.193.195:3000/');	
+							window.location.replace('http://' + '#{ host }' + ':3000');
 						});
 					} );
 					console.log('This is shift: ', shift);

@@ -9,7 +9,6 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
 
-
 // database connection
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/schedule');
@@ -27,12 +26,12 @@ var removeSupporters = function(db, callback) {
   })
 }
 
-
 var request = require('request');
 var CryptoJS = require("crypto-js");
 var cheerio = require('cheerio');
 var moment = require('moment');
 var week = moment().isoWeek();
+var year = moment().year();
 
 // User Credentials
 var user = 'mpd';
@@ -52,7 +51,7 @@ request(scheduleDubai, {timeout: 6500}, function (error, reqs, body) {
       headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
       url:     getScheduleDubai,
       form: {
-        year: '2016',
+        year: year,
         week: week
       }
     }, function(e, r, b){
@@ -115,7 +114,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/admin', admin);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

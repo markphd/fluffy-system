@@ -10,6 +10,9 @@ var friDate = moment().year(year).day("Friday").isoWeek(week).format("D");
 var satDate = moment().year(year).day("Saturday").isoWeek(week).format("D");
 var sunDate = moment().year(year).day("Sunday").isoWeek(week).format("D");
 
+var ip = require('ip');
+var host = ip.address();
+
 exports.createNightRoster = function(req, res) {
 	Supporter.find({}, { "_id": false }, function(err, supporters) {
 
@@ -73,7 +76,8 @@ exports.createNightRoster = function(req, res) {
                                 thuDate: thuDate,
                                 friDate: friDate,
                                 satDate: satDate,
-                                sunDate: sunDate });
+                                sunDate: sunDate,
+                                host: host  });
   	});
 
 }
